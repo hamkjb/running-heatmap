@@ -20,12 +20,14 @@ The output is a single HTML file with six layers you can switch between:
 ```
 pip install -r requirements.txt
 ```
-
+```
+python -m pip install -r requirements.txt
+```
 ## Usage
 
-1. Request your data from Strava: **Settings → My Account → Download or Delete Your Account → Download Request**
-2. Unzip the export and place the folder next to `heatmap.ipynb`
-3. Update the config cell:
+1. Request your data from Strava: **Settings → My Account → Download or Delete Your Account → Download Request** https://www.strava.com/athlete/delete_your_account
+3. Unzip the export and place the folder next to `heatmap.ipynb`
+4. Update the config cell:
 
 ```python
 ACTIVITIES_DIR = "your_export_folder"   # name of the unzipped folder
