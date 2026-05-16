@@ -23,6 +23,11 @@ pip install -r requirements.txt
 ```
 python -m pip install -r requirements.txt
 ```
+
+install jupyter (if missing)
+```
+python -m pip install jupyter nbconvert ipykernel
+```
 ## Usage
 
 1. Request your data from Strava: **Settings → My Account → Download or Delete Your Account → Download Request** https://www.strava.com/athlete/delete_your_account
@@ -38,6 +43,10 @@ DATE_TO        = "2024-12-31"           # or None for today
 
 4. Run all cells. Map is saved to `outputs/heatmap.html`.
 
+run with debug
+```
+python -m jupyter nbconvert --to notebook --execute heatmap.ipynb --output heatmap-ran.ipynb --ExecutePreprocessor.timeout=-1 --debug
+```
 ### Home detection
 
 Home is auto-detected from the most common activity start point in the date range, then only activities within `RADIUS_KM` of that point are included. It's a heuristic — if you started more runs from somewhere else (work, a club) than home in that period, that location wins. Override it with `HOME_LAT` / `HOME_LON` if needed.
